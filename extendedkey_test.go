@@ -341,7 +341,7 @@ func TestNewMasterValidatesSeedLength(t *testing.T) {
 
 func TestHelpers(t *testing.T) {
 	digest := ripemd160([]byte("abc"))
-	if got := hex.EncodeToString(digest[:]); got != "8eb208f7e05d987a9b04e4d8848d6a9a9f3bc6fe" {
+	if got := hex.EncodeToString(digest[:]); got != "8eb208f7e05d987a9b044a8e98c6b087f15a0bfc" {
 		t.Fatalf("ripemd160(abc) = %s", got)
 	}
 	if got := base58Encode([]byte{0, 0, 1}); got != "112" {

@@ -1,4 +1,4 @@
-module github.com/drupadh-dinesh/ed25519bip32
+module github.com/drupadh-dinesh/eddsa-hdwallet
 
 go 1.22
 

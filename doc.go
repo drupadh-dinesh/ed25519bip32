@@ -1,4 +1,4 @@
-// Package ed25519bip32 implements hierarchical deterministic (HD) wallets for
+// Package eddsa-hdwallet implements hierarchical deterministic (HD) wallets for
 // Ed25519 using the Ed25519-BIP32 derivation scheme.
 //
 // The package supports:
@@ -13,11 +13,11 @@
 // A master key is created from a seed:
 //
 //	seed := make([]byte, 32)
-//	master, err := ed25519bip32.NewMaster(seed)
+//	master, err := eddsa-hdwallet.NewMaster(seed)
 //
 // Child keys can be derived directly:
 //
-//	child, err := master.Derive(ed25519bip32.Hardened(0))
+//	child, err := master.Derive(eddsa-hdwallet.Hardened(0))
 //
 // Or using a derivation path:
 //
@@ -36,8 +36,8 @@
 // Extended keys can be serialized and restored:
 //
 //	encoded := account.String()
-//	parsed, err := ed25519bip32.ParseExtendedKey(encoded)
+//	parsed, err := eddsa-hdwallet.ParseExtendedKey(encoded)
 //
 // The implementation follows the Ed25519-BIP32 model and produces
 // deterministic key hierarchies suitable for wallet applications.
-package ed25519bip32
+package hdwallet

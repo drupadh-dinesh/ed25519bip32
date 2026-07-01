@@ -1,16 +1,16 @@
-package ed25519bip32_test
+package hdwallet_test
 
 import (
 	"crypto/ed25519"
 	"fmt"
 
-	"github.com/drupadh-dinesh/ed25519bip32"
+	hdwallet "github.com/drupadh-dinesh/eddsa-hdwallet"
 )
 
 func Example() {
 	seed := make([]byte, 32)
 
-	master, err := ed25519bip32.NewMaster(seed)
+	master, err := hdwallet.NewMaster(seed)
 	if err != nil {
 		panic(err)
 	}

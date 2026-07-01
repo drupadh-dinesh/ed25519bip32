@@ -1,4 +1,4 @@
-# ed25519bip32
+# eddsa-hdwallet
 
 ⚠️ Experimental Software
 
@@ -8,7 +8,7 @@ This code has not been audited and should not be used to secure production funds
 
 The implementation is provided for educational, research, interoperability testing, and open-source experimentation purposes.
 
-`ed25519bip32` is a Go implementation of hierarchical deterministic (HD) wallets for Ed25519 using the Ed25519-BIP32 derivation scheme.
+`eddsa-hdwallet` is a Go implementation of hierarchical deterministic (HD) wallets for Ed25519 using the Ed25519-BIP32 derivation scheme.
 
 The package provides deterministic key generation from a seed, hardened and non-hardened child derivation, public derivation support, path-based derivation, signing, and serialization of extended keys.
 
@@ -27,7 +27,7 @@ The package provides deterministic key generation from a seed, hardened and non-
 ## Installation
 
 ```bash
-go get github.com/drupadh-dinesh/ed25519bip32
+go get github.com/drupadh-dinesh/eddsa-hdwallet
 ```
 
 ## Quick Start
@@ -39,13 +39,13 @@ import (
 	"crypto/ed25519"
 	"fmt"
 
-	"github.com/drupadh-dinesh/ed25519bip32"
+	"github.com/drupadh-dinesh/eddsa-hdwallet"
 )
 
 func main() {
 	seed := make([]byte, 32)
 
-	master, err := ed25519bip32.NewMaster(seed)
+	master, err := hdwallet.NewMaster(seed)
 	if err != nil {
 		panic(err)
 	}
@@ -67,7 +67,7 @@ func main() {
 ```go
 seed := make([]byte, 32)
 
-master, err := ed25519bip32.NewMaster(seed)
+master, err := hdwallet.NewMaster(seed)
 if err != nil {
 	panic(err)
 }
@@ -80,7 +80,7 @@ Seed lengths between 16 and 64 bytes are supported.
 ### Hardened Derivation
 
 ```go
-child, err := master.Derive(ed25519bip32.Hardened(0))
+child, err := master.Derive(eddsa-hdwallet.Hardened(0))
 ```
 
 ### Non-Hardened Derivation
@@ -156,7 +156,7 @@ edpub...
 ### Parsing
 
 ```go
-parsed, err := ed25519bip32.ParseExtendedKey(encoded)
+parsed, err := hdwallet.ParseExtendedKey(encoded)
 ```
 
 ## Fingerprints

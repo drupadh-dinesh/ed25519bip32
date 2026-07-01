@@ -1,4 +1,4 @@
-package ed25519bip32
+package hdwallet
 
 import "encoding/binary"
 
